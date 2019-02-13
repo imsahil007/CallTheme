@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="button_bg_color">#ffffff</color>
+    <color name="green">#4CAF50</color>
+    <color name="slide_text_color">#ffffff</color>
+    <color name="red">#F44336</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="custom">#83CDF4</color>
+    <color name="custom2">#5261CB</color>
+    <color name="shadow">#555555</color>
+    <color name="title">#777777</color>
+    <color name="Red">#f41f1f</color>
+    <color name="Green">#15cc11</color>
+
+</resources>
