@@ -41,7 +41,7 @@ public class IncomingCallScreen extends AppCompatActivity {
     }
 
     public void rejectCall() {
-        TelecomManager tm = (TelecomManager) getBaseContext().getSystemService(Context.TELECOM_SERVICE);
+        TelecomManager tm = (TelecomManager) getApplicationContext().getSystemService(Context.TELECOM_SERVICE);
 
         if (tm != null) {
             tm.endCall();

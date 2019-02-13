@@ -10,11 +10,15 @@ import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 public class PhoneStateReceiver extends BroadcastReceiver {
+    public int theme=0;
     @Override
     public void onReceive(final Context context, Intent intent) {
         Bundle extras = intent.getExtras();
 
-final int theme=Integer.getInteger(thisapp.theme.trim());
+        try {
+             theme= Integer.getInteger(thisapp.theme.trim());
+}catch (Exception e){
+        }
     if (extras != null) {
             final String state = extras.getString(TelephonyManager.EXTRA_STATE);
 

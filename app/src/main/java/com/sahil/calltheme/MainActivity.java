@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 theme[0] ="0";
                 editor.putString("type", theme[0]);
                 editor.apply();
+                finishAffinity();
             }
         });
         two.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 theme[0] ="1";
                 editor.putString("type", theme[0]);
                 editor.apply();
+                finishAffinity();
             }
         });
 
