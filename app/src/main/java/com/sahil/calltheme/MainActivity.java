@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -17,8 +18,10 @@ import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.lang.reflect.Method;
@@ -29,12 +32,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences pref;
+        pref= getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        final SharedPreferences.Editor editor = pref.edit();
+        final String[] theme = {pref.getString("theme", "0")};
       /*  getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);*/
         isPhonePermissionGranted();
         NotificationManager mNotificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
+        RadioButton one=(RadioButton)findViewById(R.id.one);
+        RadioButton two=(RadioButton)findViewById(R.id.two);
+        one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme[0] ="0";
+                editor.putString("type", theme[0]);
+                editor.apply();
+            }
+        });
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme[0] ="1";
+                editor.putString("type", theme[0]);
+                editor.apply();
+            }
+        });
 
 
 

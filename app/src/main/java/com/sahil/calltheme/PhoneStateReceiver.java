@@ -14,7 +14,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         Bundle extras = intent.getExtras();
 
-final int theme=1;
+final int theme=Integer.getInteger(thisapp.theme.trim());
     if (extras != null) {
             final String state = extras.getString(TelephonyManager.EXTRA_STATE);
 
